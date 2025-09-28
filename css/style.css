@@ -46,6 +46,8 @@ header, footer {
 
 header > nav { width: 100%; }
 
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+
 .flex, .flex-x, .flex-y { display: flex; }
 .flex-y { flex-direction: column; }
 .flex-o { align-items: center; justify-content: center; } /* avoid "c" mistaken as "column" */
@@ -60,7 +62,6 @@ header > nav { width: 100%; }
 	max-width: 100%;
 	font-size: 16pt;
 
-	h1, h2, p, ul { margin: 0; }
 	h1 { font-size: 32pt; }
 	h2 { font-size: 24pt; }
 	p { margin-left: 1em; }
@@ -97,4 +98,34 @@ header > nav { width: 100%; }
 /* ================================== JOB LISTING PAGE STYLING ================================== */
 #page--jobs {
 	width: 1200px;
+
+	details > summary::before {
+		content: "Show more...";
+		font-weight: normal;
+	}
+	details[open] > summary::before { content: "Hide"; }
+
+	*::before {
+		margin-right: .5em;
+		font-weight: bold;
+	}
+}
+
+/* TODO: Use feather icons */
+.job-location::before { content: "L:"; }
+.job-salary::before { content: "S:"; }
+.job-company::before { content: "Company:"; }
+.job-superior::before { content: "Report to:"; }
+.job-langs::before { content: "Languages:"; }
+.job-frameworks::before { content: "Frameworks:"; }
+.job-experience::before { content: "Experience:"; }
+.job-essentials::before { content: "Essential qualifications:" }
+.job-preferences::before { content: "Preferable qualifications:" }
+
+.job-description {
+	text-indent: 1em;
+	&::before {
+		content: "Brief Description";
+		text-indent: 0;
+	}
 }
