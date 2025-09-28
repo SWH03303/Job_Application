@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="flex-y">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DoD - Home</title>
 	<link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-	<header>
-		<nav id="global-navigation">
+<body class="flex-y">
+	<header class="flex">
+		<nav id="global-navigation" class="fill flex">
 			<a href="/index.html" class="current-page">Home</a>
 			<a href="/jobs.html">Listing</a>
 			<a href="/apply.html">Applications</a>
 			<a href="/about.html">About</a>
-			<span class="fill"></span>
-			<a href="mailto:info@duoordxe.com.au">Contact Us</a>
 		</nav>
+		<a href="mailto:info@duoordxe.com.au">Contact Us</a>
 	</header>
-	<main id="page--home">
-		<section id="company-introduction">
+	<main id="page--home" class="fill flex-y">
+		<section id="company-introduction" class="flex flex-o">
 			<img id="company-logo" src="/images/logo.png" alt="Company Logo">
 			<div id="company-info">
 				<h1>DuoOrDxe Ltd</h1>
@@ -26,12 +25,12 @@
 				<p><span class="tiny">Spoiler: we're sprinting all the sprints and scrims right before the deadline.</span></p>
 			</div>
 		</section>
-		<div id="site-info">
-			<section id="site-description">
+		<div id="site-info" class="flex">
+			<section id="site-description" class="fill flex-y flex-o">
 				<h2>This website</h2>
 				<p>This a <span class="italic">static</span> website where other people can post, or at least request, vacant job positions, as well as applications for said positions.</p>
 			</section>
-			<section id="site-services">
+			<section id="site-services" class="fill flex-y flex-o">
 				<h2>Services</h2>
 				<ul>
 					<li><a href="/jobs.html">Positions Listing</a></li>
@@ -40,7 +39,7 @@
 			</section>
 		</div>
 	</main>
-	<footer>
+	<footer class="flex flex-o">
 		<a id="project-anchor" href="https://dueordie.atlassian.net/jira/software/projects/WEBTECHPRJ/summary">Project Management</a>
 	</footer>
 </body>
