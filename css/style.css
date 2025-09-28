@@ -1,15 +1,19 @@
 /*
  * filename: `/css/style.css`
- * author: SAWH03303, SWH03403
+ * author: SWH03303, SWH03403
  * created: 2025-09-26
- * description: styling
+ * description: styling applied by all pages
  */
+
+@import "fonts.css";
 
 /* ======================================= GLOBAL STYLING ======================================= */
 :root {
 	--spacing: 10px;
 	--shadow: 0 0 20px #0003;
 }
+
+* { font-family: Poppins; } /* Default global font. */
 
 html, body {
 	margin: 0;
