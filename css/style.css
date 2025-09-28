@@ -140,6 +140,10 @@ a {
 	align-items: flex-start;
 
 	li { font-size: 16pt; }
+	li.empty, li.empty a {
+		color: #aaa;
+		text-decoration: line-through;
+	}
 	.minor {
 		margin-top: var(--spacing);
 		width: 60%;
