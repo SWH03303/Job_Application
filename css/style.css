@@ -64,6 +64,12 @@ header > nav {
 	h1 { font-size: 32pt; }
 	h2 { font-size: 24pt; }
 	p { margin-left: 1em; }
+
+	a {
+		color: black;
+		font-weight: 500;
+		&:not(:hover) { text-decoration: none; }
+	}
 }
 
 #company-introduction, #site-description, #site-services {
