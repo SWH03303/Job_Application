@@ -101,15 +101,20 @@ a {
 	min-width: 75%;
 	align-items: flex-start;
 
-	details > summary::before {
-		content: "Show more...";
-		font-weight: normal;
-	}
-	details[open] > summary::before { content: "Hide"; }
-
 	h1 { z-index: 1; border-radius: .5em; }
 	h2 { line-height: 1em; margin-bottom: .2em; }
 
+	article { position: relative; }
+	summary {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		list-style-type: none;
+	}
+
+	article:hover { background: #eaeaea; }
 	article:not(:has(> details[open])) {
 		/* 20px from container padding, 40px from element padding */
 		max-width: calc((100% - 20px) / 3 - 40px);
