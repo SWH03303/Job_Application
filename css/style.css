@@ -8,6 +8,7 @@
 /* ======================================= GLOBAL STYLING ======================================= */
 :root {
 	--spacing: 10px;
+	--shadow: 0 0 20px #0003;
 }
 
 html, body {
@@ -58,11 +59,16 @@ header > nav {
 	h1, h2, p, ul { margin: 0; }
 	h1 { font-size: 32pt; }
 	h2 { font-size: 24pt; }
+	p { margin-left: 1em; }
 
 	> * {
 		background-color: #fff;
-		padding: 50px;
+		padding: 2em;
+		box-shadow: var(--shadow);
 	}
+
+	> :first-child { border-radius: 2em 2em 0 0; }
+	> :last-child { border-radius: 0 0 2em 2em; }
 }
 
 #company-introduction {
@@ -72,7 +78,6 @@ header > nav {
 
 #company-logo {
 	display: block;
-	padding: var(--spacing);
 	width: 200px;
 }
 
