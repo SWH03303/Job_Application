@@ -25,6 +25,7 @@ main {
 	justify-content: center;
 	gap: var(--spacing);
 	align-self: center;
+	max-width: 100%;
 }
 
 header, footer {
@@ -59,7 +60,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 /* ====================================== HOME PAGE STYLING ===================================== */
 #page--home {
 	width: 1400px;
-	max-width: 100%;
 	font-size: 16pt;
 
 	h1 { font-size: 32pt; }
@@ -98,6 +98,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 /* ================================== JOB LISTING PAGE STYLING ================================== */
 #page--jobs {
 	width: 1200px;
+	min-width: 75%;
+	align-items: flex-start;
 
 	details > summary::before {
 		content: "Show more...";
@@ -105,10 +107,37 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 	}
 	details[open] > summary::before { content: "Hide"; }
 
+	h1 { z-index: 1; border-radius: .5em; }
+	h2 { line-height: 1em; margin-bottom: .2em; }
+
+	article:not(:has(> details[open])) {
+		/* 20px from container padding, 40px from element padding */
+		max-width: calc((100% - 20px) / 3 - 40px);
+	}
+
 	*::before {
 		margin-right: .5em;
 		font-weight: bold;
 	}
+}
+
+.categorized-listing {
+	padding: 0 var(--spacing);
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--spacing);
+}
+
+#listing-categories {
+	gap: var(--spacing);
+}
+
+#category-navigation,
+#listing-categories h1,
+#listing-categories article {
+	padding: 20px;
+	background-color: white;
+	box-shadow: var(--shadow);
 }
 
 /* TODO: Use feather icons */
