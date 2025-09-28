@@ -40,3 +40,25 @@ header > nav {
 }
 
 main, .fill { flex: 1; }
+
+/* ====================================== HOME PAGE STYLING ===================================== */
+#page--home {
+	width: 80%;
+	align-self: center;
+}
+
+#company-introduction {
+	display: flex;
+	gap: var(--spacing);
+}
+
+#company-logo {
+	display: block;
+	padding: var(--spacing);
+	width: 200px;
+}
+
+#company-title {
+	margin: 0;
+	font-size: 36pt;
+}
