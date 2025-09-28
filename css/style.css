@@ -49,6 +49,12 @@ header > nav { width: 100%; }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 
+a {
+	color: black;
+	font-weight: 500;
+	&:not(:hover) { text-decoration: none; }
+}
+
 .flex, .flex-x, .flex-y { display: flex; }
 .flex-y { flex-direction: column; }
 .flex-o { align-items: center; justify-content: center; } /* avoid "c" mistaken as "column" */
@@ -65,12 +71,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 	h1 { font-size: 32pt; }
 	h2 { font-size: 24pt; }
 	p { margin-left: 1em; }
-
-	a {
-		color: black;
-		font-weight: 500;
-		&:not(:hover) { text-decoration: none; }
-	}
 }
 
 #company-introduction, #site-description, #site-services {
@@ -119,6 +119,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 		margin-right: .5em;
 		font-weight: bold;
 	}
+}
+
+#category-navigation {
+	position: sticky;
+	top: 100px;
+	border-radius: 1em;
+	li { font-size: 16pt; }
 }
 
 .categorized-listing {
