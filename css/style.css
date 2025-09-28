@@ -143,6 +143,12 @@ a {
 		align-self: flex-end;
 		text-align: right;
 	}
+
+	&::before {
+		content: "Jump to";
+		font-weight: bold;
+		font-size: 24pt;
+	}
 }
 
 .categorized-listing {
