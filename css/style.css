@@ -115,12 +115,15 @@ a {
 		list-style-type: none;
 	}
 
-	article { padding: 20px; }
+	article {
+		padding: 20px;
+		justify-content: flex-start;
+	}
 
 	article:hover { background: #eaeaea; }
 	article:not(:has(> details[open])) {
 		/* 20px from container padding, 40px from element padding */
-		max-width: calc((100% - 20px) / 3 - 40px);
+		width: calc((100% - 20px) / 3 - 40px);
 	}
 
 	*::before {
@@ -156,6 +159,13 @@ a {
 	display: flex;
 	flex-flow: row wrap;
 	gap: var(--spacing);
+
+	&:empty {
+		justify-content: center;
+		color: #aaa;
+		font-weight: 500;
+		&::before { content: "There is currently no items for this category. Please try again later."; }
+	}
 }
 
 #listing-categories {
