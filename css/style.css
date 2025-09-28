@@ -4,3 +4,89 @@
  * created: 2025-09-26
  * description: styling
  */
+
+/* ======================================= GLOBAL STYLING ======================================= */
+:root {
+	--spacing: 10px;
+	--shadow: 0 0 20px #0003;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	justify-content: center safe;
+	background-color: #ddd;
+}
+
+html { height: 100%; }
+body { min-height: 100%; }
+main { justify-content: center; gap: var(--spacing); }
+
+header, footer {
+	padding: 1.5em;
+	font-size: 14pt;
+	font-weight: bold;
+
+	a {
+		padding: .8em .8em;
+		text-transform: uppercase;
+		color: grey;
+		text-decoration: none;
+
+		&.current-page, &:hover {
+			color: black;
+		}
+	}
+}
+
+header > nav { width: 100%; }
+
+.flex, .flex-x, .flex-y { display: flex; }
+.flex-y { flex-direction: column; }
+.flex-o { align-items: center; justify-content: center; } /* avoid "c" mistaken as "column" */
+.fill { flex-basis: 0; flex-grow: 1; }
+
+.important { font-weight: bold; }
+.tiny { font-size: 8pt; font-weight: bold; color: #ddd; }
+
+/* ====================================== HOME PAGE STYLING ===================================== */
+#page--home {
+	width: 1400px;
+	max-width: 100%;
+	align-self: center;
+	font-size: 16pt;
+
+	h1, h2, p, ul { margin: 0; }
+	h1 { font-size: 32pt; }
+	h2 { font-size: 24pt; }
+	p { margin-left: 1em; }
+
+	a {
+		color: black;
+		font-weight: 500;
+		&:not(:hover) { text-decoration: none; }
+	}
+}
+
+#company-introduction, #site-description, #site-services {
+	background-color: #fff;
+	padding: 2em;
+	box-shadow: var(--shadow);
+}
+#company-introduction {
+	gap: var(--spacing);
+	border-radius: 2em 2em 0 0;
+}
+#company-logo { display: block; max-width: 300px; }
+#company-title { margin: 0; }
+
+#site-info { gap: var(--spacing); }
+#site-description, #site-services {
+	align-items: flex-start;
+	border-radius: 0 0 2em 0;
+}
+#site-description {
+	flex: 2;
+	border-radius: 0 0 0 2em;
+}
