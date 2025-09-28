@@ -155,9 +155,12 @@ a {
 	box-shadow: var(--shadow);
 }
 
-/* TODO: Use feather icons */
-.job-location::before { content: "L:"; }
-.job-salary::before { content: "S:"; }
+.listing-front {
+	align-items: flex-end;
+	h1 { align-self: center; }
+}
+
+/* TODO: Use feather icons for always-visible info */
 .job-company::before { content: "Company:"; }
 .job-superior::before { content: "Report to:"; }
 .job-langs::before { content: "Languages:"; }
