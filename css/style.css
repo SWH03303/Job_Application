@@ -171,6 +171,7 @@ a {
 }
 
 /* TODO: Use feather icons for always-visible info */
+.job-ident::before { content: "Ref. Number:"; }
 .job-company::before { content: "Company:"; }
 .job-superior::before { content: "Report to:"; }
 .job-langs::before { content: "Languages:"; }
