@@ -182,8 +182,10 @@ a {
 }
 
 .listing-front {
+	flex: 1;
 	align-items: flex-end;
 	h1 { align-self: center; }
+	h2 { flex: 1; }
 }
 
 /* TODO: Use feather icons for always-visible info */
