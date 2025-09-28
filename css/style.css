@@ -114,6 +114,8 @@ a {
 		list-style-type: none;
 	}
 
+	article { padding: 20px; }
+
 	article:hover { background: #eaeaea; }
 	article:not(:has(> details[open])) {
 		/* 20px from container padding, 40px from element padding */
@@ -127,6 +129,7 @@ a {
 }
 
 #category-navigation {
+	padding: 2em;
 	position: sticky;
 	top: 100px;
 	border-radius: 1em;
@@ -142,12 +145,12 @@ a {
 
 #listing-categories {
 	gap: var(--spacing);
+	h1 { padding: .4em .8em; }
 }
 
 #category-navigation,
 #listing-categories h1,
 #listing-categories article {
-	padding: 20px;
 	background-color: white;
 	box-shadow: var(--shadow);
 }
