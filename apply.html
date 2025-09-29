@@ -7,5 +7,119 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+	<header class="flex">
+		<nav id="global-navigation" class="fill flex">
+			<a href="/index.html">Home</a>
+			<a href="/jobs.html">Listing</a>
+			<a href="/apply.html" class="current-page">Applications</a>
+			<a href="/about.html">About</a>
+		</nav>
+		<a href="mailto:info@duoordxe.com.au">Contact Us</a>
+	</header>
+
+
+	<main id="page--home" class="fill flex-o">
+		<section class="flex flex-y" id = "apply--head">
+			<div>
+				<h1>Application Submission</h1>
+				<p>To apply for a job, please fill the following form:<p>
+			</div>
+			
+		</section>
+
+		<section class="flex flex-y" id = "apply--form">
+			<form enctype="multipart/form-data">
+				<div>
+					<h2>Personal information</h2>
+
+					<label for="apply--applicant-name">Full Name:</label>
+					<input type="text" id="apply--applicant-name" name="applicant-name" required>
+					<br>
+
+					<label for="apply--applicant-address">Address:</label>
+					<input type="text" id="apply--applicant-address" name="applicant-address" required>
+					<br>
+
+					<label for="apply--applicant-dob">Date of Birth:</label>
+					<input type="date" id="apply--applicant-dob" name="applicant-dob" required>
+					<br>
+
+					<label for="apply--applicant-phonenumber">Phone number:</label>
+					<input type="number" id="apply--applicant-phonenumber" name="applicant-phonenumber" required>
+					<br>
+
+					<label for="apply--applicant-email">Email:</label>
+					<input type="text" id="apply--applicant-email" name="applicant-email" required>
+					<br>
+
+					<label for="apply--applicant-gender">Gender:</label>
+					<select id="apply--applicant-gender" name="applicant-gender" required>
+						<option value="">--Please choose--</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>
+					</select>
+					<br>
+
+					<label>Are you willing to submit to a background check if selected for employment?</label><br>
+					<input type="radio" id="apply--background-yes" name="background-check" value="yes" required>
+					<label for="apply--background-yes">Yes</label>
+					<input type="radio" id="apply--background-no" name="background-check" value="no">
+					<label for="apply--background-no">No</label>
+					<br>
+
+					<label>Have you ever been convicted of a felony?</label><br>
+					<input type="radio" id="apply--felony-yes" name="felony-check" value="yes" required>
+					<label for="apply--felony-yes">Yes</label>
+					<input type="radio" id="apply--felony-no" name="felony-check" value="no">
+					<label for="apply--felony-no">No</label>
+					<br>
+
+					<label>Are you a veteran?</label><br>
+					<input type="radio" id="apply--veteran-yes" name="veteran-check" value="yes" required>
+					<label for="apply--veteran-yes">Yes</label>
+					<input type="radio" id="apply--veteran-no" name="veteran-check" value="no">
+					<label for="apply--veteran-no">No</label>
+					<br>
+
+					<label for="apply--start-working-date">When are you available to start in case you are selected for employment?</label>
+					<input type="date" id="apply--start-working-date" name="start-working-date" required>
+				</div>
+
+				<div>
+					<h2>Position information</h2>
+
+					<label for="apply--company-name">Name of the company:</label>
+					<input type="text" id="apply--company-name" name="company-name" required>
+					<br>
+
+					<label for="apply--company-position">Position you are applying for:</label>
+					<input type="text" id="apply--company-position" name="company-position" required>
+					<br>
+
+					<label for="apply--desired-salary">Desired salary:</label>
+					<input type="text" id="apply--desired-salary" name="desired-salary" required>
+					<br>
+
+
+					<label>Time:</label><br>
+					<input type="radio" id="apply--company-time-full" name="company-time" value="full" required>
+					<label for="apply--company-time-full">Full-time</label>
+					<input type="radio" id="apply--company-time-part" name="company-time" value="part" required>
+					<label for="apply--company-time-part">Part-time</label>
+					<input type="radio" id="apply--company-time-temporary" name="company-time" value="temporary" required>
+					<label for="apply--company-time-part">Temporary</label>
+					<br>
+
+					<label for="apply--documents">Upload supporting documents (Resume, certificates, etc...):</label>
+					<input type="file" id="apply--documents" name="documents" multiple>
+					<br>
+				</div>
+
+				<button type="submit">Submit Application</button>
+
+			</form>
+		</section>
+	</main>
 </body>
 </html>
