@@ -1,15 +1,19 @@
 /*
  * filename: `/css/style.css`
- * author: SAWH03303, SWH03403
+ * author: SWH03303, SWH03403
  * created: 2025-09-26
- * description: styling
+ * description: styling applied by all pages
  */
+
+@import "fonts.css";
 
 /* ======================================= GLOBAL STYLING ======================================= */
 :root {
 	--spacing: 10px;
 	--shadow: 0 0 20px #0003;
 }
+
+* { font-family: Poppins; } /* Default global font. */
 
 html, body {
 	margin: 0;
@@ -25,6 +29,7 @@ main {
 	justify-content: center;
 	gap: var(--spacing);
 	align-self: center;
+	max-width: 100%;
 }
 
 header, footer {
@@ -46,6 +51,14 @@ header, footer {
 
 header > nav { width: 100%; }
 
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+
+a {
+	color: black;
+	font-weight: 500;
+	&:not(:hover) { text-decoration: none; }
+}
+
 .flex, .flex-x, .flex-y { display: flex; }
 .flex-y { flex-direction: column; }
 .flex-o { align-items: center; justify-content: center; } /* avoid "c" mistaken as "column" */
@@ -53,23 +66,16 @@ header > nav { width: 100%; }
 
 .important { font-weight: bold; }
 .tiny { font-size: 8pt; font-weight: bold; color: #ddd; }
+.minor { color: #aaa; }
 
 /* ====================================== HOME PAGE STYLING ===================================== */
 #page--home {
 	width: 1400px;
-	max-width: 100%;
 	font-size: 16pt;
 
-	h1, h2, p, ul { margin: 0; }
 	h1 { font-size: 32pt; }
 	h2 { font-size: 24pt; }
 	p { margin-left: 1em; }
-
-	a {
-		color: black;
-		font-weight: 500;
-		&:not(:hover) { text-decoration: none; }
-	}
 }
 
 #company-introduction, #site-description, #site-services {
@@ -92,4 +98,118 @@ header > nav { width: 100%; }
 #site-description {
 	flex: 2;
 	border-radius: 0 0 0 2em;
+}
+
+/* ================================== JOB LISTING PAGE STYLING ================================== */
+#page--jobs {
+	width: 1200px;
+	min-width: 75%;
+	align-items: flex-start;
+
+	h1 { z-index: 1; border-radius: .5em; }
+	h2 { line-height: 1em; margin-bottom: .2em; }
+
+	article { position: relative; }
+	summary {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		list-style-type: none;
+	}
+
+	article {
+		padding: 20px;
+		justify-content: flex-start;
+	}
+
+	article:hover { background: #eaeaea; }
+	article:not(:has(> details[open])) {
+		/* 20px from container padding, 40px from element padding */
+		width: calc((100% - 20px) / 3 - 40px);
+	}
+
+	*::before {
+		margin-right: .5em;
+		font-weight: bold;
+	}
+}
+
+#category-navigation {
+	padding: 2em;
+	position: sticky;
+	top: 100px;
+	border-radius: 1em;
+	align-items: flex-start;
+
+	li { font-size: 16pt; }
+	li.empty, li.empty a {
+		color: #aaa;
+		text-decoration: line-through;
+	}
+	.minor {
+		margin-top: var(--spacing);
+		width: 60%;
+		align-self: flex-end;
+		text-align: right;
+	}
+
+	&::before {
+		content: "Jump to";
+		font-weight: bold;
+		font-size: 24pt;
+	}
+}
+
+.categorized-listing {
+	padding: 0 var(--spacing);
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--spacing);
+
+	&:empty {
+		justify-content: center;
+		color: #aaa;
+		font-weight: 500;
+		&::before { content: "There is currently no items for this category. Please try again later."; }
+	}
+}
+
+#listing-categories {
+	gap: var(--spacing);
+	h1 { padding: .4em .8em; }
+	.minor { font-weight: 600; }
+}
+
+#category-navigation,
+#listing-categories h1,
+#listing-categories article {
+	background-color: white;
+	box-shadow: var(--shadow);
+}
+
+.listing-front {
+	flex: 1;
+	align-items: flex-end;
+	h1 { align-self: center; }
+	h2 { flex: 1; }
+}
+
+/* TODO: Use feather icons for always-visible info */
+.job-ident::before { content: "Ref. Number:"; }
+.job-company::before { content: "Company:"; }
+.job-superior::before { content: "Report to:"; }
+.job-langs::before { content: "Languages:"; }
+.job-frameworks::before { content: "Frameworks:"; }
+.job-experience::before { content: "Experience:"; }
+.job-essentials::before { content: "Essential qualifications:" }
+.job-preferences::before { content: "Preferable qualifications:" }
+
+.job-description {
+	text-indent: 1em;
+	&::before {
+		content: "Brief Description";
+		text-indent: 0;
+	}
 }
