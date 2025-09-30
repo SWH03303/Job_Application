@@ -213,3 +213,33 @@ a {
 		text-indent: 0;
 	}
 }
+
+
+/* ================================== APPLY PAGE STYLING ================================== */
+
+#apply--form {
+	background-color: #fff;
+	padding: 2em;
+	box-shadow: var(--shadow);
+	gap: var(--spacing);
+	border-radius: 2em 2em 2em 2em;
+	max-width: 500px;
+    width: 100%;
+    margin: 2em auto;
+    box-sizing: border-box;
+}
+
+#apply--submitButton {
+	padding: 1em 2em;
+	font-size: 16pt;
+	font-weight: bold;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	border-radius: 1em;
+	cursor: pointer;
+	display: block;
+    margin: 0 auto 0 auto;
+
+	&:hover { background-color: #333; }
+}
