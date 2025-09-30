@@ -18,8 +18,8 @@
 	</header>
 
 
-	<main id="page--home" class="fill flex-o">
-		<section class="flex flex-y" id = "apply--head">
+	<main id="apply" class="fill flex-y">
+		<section class="flex flex-o" id = "apply--head">
 			<div>
 				<h1>Application Submission</h1>
 				<p>To apply for a job, please fill the following form:<p>
@@ -27,7 +27,7 @@
 			
 		</section>
 
-		<section class="flex flex-y" id = "apply--form">
+		<section class="flex flex-o" id = "apply--form">
 			<form enctype="multipart/form-data">
 				<div>
 					<h2>Personal information</h2>
@@ -45,7 +45,7 @@
 					<br>
 
 					<label for="apply--applicant-phonenumber">Phone number:</label>
-					<input type="text" id="apply--applicant-phonenumber" name="applicant-phonenumber" pattern="[^0-9]+" required>
+					<input type="text" id="apply--applicant-phonenumber" name="applicant-phonenumber" pattern="[0-9]+" required>
 					<br>
 
 					<label for="apply--applicant-email">Email:</label>
@@ -63,23 +63,23 @@
 
 					<label>Are you willing to submit to a background check if selected for employment?</label><br>
 					<input type="radio" id="apply--background-yes" name="background-check" value="yes" required>
-					<label for="apply--background-yes">Yes</label>
+					<label for="apply--background-yes" class = "apply--radiobutton">Yes</label>
 					<input type="radio" id="apply--background-no" name="background-check" value="no">
-					<label for="apply--background-no">No</label>
+					<label for="apply--background-no" class = "apply--radiobutton">No</label>
 					<br>
 
 					<label>Have you ever been convicted of a felony?</label><br>
 					<input type="radio" id="apply--felony-yes" name="felony-check" value="yes" required>
-					<label for="apply--felony-yes">Yes</label>
+					<label for="apply--felony-yes" class = "apply--radiobutton">Yes</label>
 					<input type="radio" id="apply--felony-no" name="felony-check" value="no">
-					<label for="apply--felony-no">No</label>
+					<label for="apply--felony-no" class = "apply--radiobutton">No</label>
 					<br>
 
 					<label>Are you a veteran?</label><br>
 					<input type="radio" id="apply--veteran-yes" name="veteran-check" value="yes" required>
-					<label for="apply--veteran-yes">Yes</label>
+					<label for="apply--veteran-yes" class = "apply--radiobutton">Yes</label>
 					<input type="radio" id="apply--veteran-no" name="veteran-check" value="no">
-					<label for="apply--veteran-no">No</label>
+					<label for="apply--veteran-no" class = "apply--radiobutton">No</label>
 					<br>
 
 					<label for="apply--start-working-date">When are you available to start in case you are selected for employment?</label>
@@ -108,19 +108,20 @@
 
 					<label>Time:</label><br>
 					<input type="radio" id="apply--company-time-full" name="company-time" value="full" required>
-					<label for="apply--company-time-full">Full-time</label>
+					<label for="apply--company-time-full" class = "apply--radiobutton">Full-time</label>
 					<input type="radio" id="apply--company-time-part" name="company-time" value="part" required>
-					<label for="apply--company-time-part">Part-time</label>
+					<label for="apply--company-time-part" class = "apply--radiobutton">Part-time</label>
 					<input type="radio" id="apply--company-time-temporary" name="company-time" value="temporary" required>
-					<label for="apply--company-time-part">Temporary</label>
+					<label for="apply--company-time-part" class = "apply--radiobutton">Temporary</label>
 					<br>
 
 					<label for="apply--documents">Upload supporting documents (Resume, certificates, etc...):</label>
 					<input type="file" id="apply--documents" name="documents" multiple>
 					<br>
 				</div>
-
-				<button type="submit">Submit Application</button>
+				
+				<br>
+				<button type="submit" id = "apply--submitButton">Submit Application</button>
 
 			</form>
 		</section>

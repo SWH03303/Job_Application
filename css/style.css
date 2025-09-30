@@ -243,3 +243,27 @@ a {
 
 	&:hover { background-color: #333; }
 }
+
+.apply--radiobutton {
+    margin-right: 1.5em;
+}
+
+/* Hide the default radio */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    border: 3px solid #888;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    vertical-align: middle;
+} 
+
+/* Custom checked style */
+input[type="radio"]:checked {
+    border-color: #333;
+    background: #333;
+}
