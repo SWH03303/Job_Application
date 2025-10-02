@@ -285,4 +285,15 @@ input[type="radio"]:checked {
     background: #333;
 }
 
+/* ================================== ABOUT PAGE STYLING ================================== */
+#about--main {
+	width: 1200px;
+	min-width: 75%;
 
+}
+
+#about--company-logo { 
+	display: flex;
+	margin: auto;
+	width: 50%;
+}
