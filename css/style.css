@@ -8,6 +8,7 @@
 @import "fonts.css";
 
 /* ======================================= GLOBAL STYLING ======================================= */
+/* Global variables to avoid repeating code */
 :root {
 	--spacing: 10px;
 	--shadow: 0 0 20px #0003;
@@ -24,11 +25,11 @@ html, body {
 }
 
 html { height: 100%; }
-body { min-height: 100%; }
+body { min-height: 100%; } /* Page can grow past 100% */
 main {
 	justify-content: center;
 	gap: var(--spacing);
-	align-self: center;
+	align-self: center; /* Prevent main from being stretched to 100% width. */
 	max-width: 100%;
 }
 
@@ -39,13 +40,12 @@ header, footer {
 
 	a {
 		padding: .8em .8em;
-		text-transform: uppercase;
+		text-transform: uppercase; /* Make every letters uppercase. */
 		color: grey;
 		text-decoration: none;
 
-		&.current-page, &:hover {
-			color: black;
-		}
+		/* Make the button "stay" active after clicking. */
+		&.current-page, &:hover { color: black; }
 	}
 }
 
@@ -56,12 +56,17 @@ h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 a {
 	color: black;
 	font-weight: 500;
+
+	/* Make links underline visible *only* when hovered */
 	&:not(:hover) { text-decoration: none; }
 }
 
+/* Common flex attribute, `flex` is aliased to `flex-x` */
 .flex, .flex-x, .flex-y { display: flex; }
 .flex-y { flex-direction: column; }
 .flex-o { align-items: center; justify-content: center; } /* avoid "c" mistaken as "column" */
+/* Shrunk element to 0 before expanding into remaining space. This helps scrolling problem when the
+ * existing elements already overflows. */
 .fill { flex-basis: 0; flex-grow: 1; }
 
 .important { font-weight: bold; }
@@ -87,7 +92,7 @@ a {
 	gap: var(--spacing);
 	border-radius: 2em 2em 0 0;
 }
-#company-logo { display: block; max-width: 300px; }
+#company-logo { display: block; max-width: 300px; } /* Preserve image ratio */
 #company-title { margin: 0; }
 
 #site-info { gap: var(--spacing); }
@@ -96,7 +101,7 @@ a {
 	border-radius: 0 0 2em 0;
 }
 #site-description {
-	flex: 2;
+	flex-grow: 2; /* Grow by 2 times compared to other fill elements */
 	border-radius: 0 0 0 2em;
 }
 
@@ -106,16 +111,22 @@ a {
 	min-width: 75%;
 	align-items: flex-start;
 
-	h1 { z-index: 1; border-radius: .5em; }
-	h2 { line-height: 1em; margin-bottom: .2em; }
+	h1 {
+		z-index: 1; /* Raise header so its shadow is over the listings */
+		border-radius: .5em;
+	}
+	h2 { line-height: 1em; margin-bottom: .2em; } /* Fix high line gaps caused by Poppins font */
 
-	article { position: relative; }
+	/* The `summary` element is used to show/hide content of the `details` element with a click.
+	 * This expands the element to exactly cover the listing box, turning the box into a button. */
+	article { position: relative; /* Anchor */ }
 	summary {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		/* Hide all contents on the toggle trigger */
 		list-style-type: none;
 	}
 
@@ -126,12 +137,13 @@ a {
 
 	article:hover { background: #eaeaea; }
 	article:not(:has(> details[open])) {
-		/* 20px from container padding, 40px from element padding */
+		/* Divide the space for exactly 3 elements each row:
+		 * 20px from container padding, 40px from element padding */
 		width: calc((100% - 20px) / 3 - 40px);
 	}
 
 	*::before {
-		margin-right: .5em;
+		margin-right: .5em; /* Lazy whitespace */
 		font-weight: bold;
 	}
 }
@@ -165,13 +177,14 @@ a {
 .categorized-listing {
 	padding: 0 var(--spacing);
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row wrap; /* Place the 4th (and so on) element below existing ones */
 	gap: var(--spacing);
 
 	&:empty {
 		justify-content: center;
 		color: #aaa;
 		font-weight: 500;
+		/* Avoid repeating message when category is empty. */
 		&::before { content: "There is currently no items for this category. Please try again later."; }
 	}
 }
@@ -189,6 +202,9 @@ a {
 	box-shadow: var(--shadow);
 }
 
+/* Move location/salary texts to the bottom so they are aligned to that in other listings of the
+ * same row. */
+/* NOTE: This should've been named `listing-preview` */
 .listing-front {
 	flex: 1;
 	align-items: flex-end;
@@ -196,6 +212,7 @@ a {
 	h2 { flex: 1; }
 }
 
+/* Avoid using the same text prefixes in every listing entry. */
 /* TODO: Use feather icons for always-visible info */
 .job-ident::before { content: "Ref. Number:"; }
 .job-company::before { content: "Company:"; }
@@ -207,10 +224,10 @@ a {
 .job-preferences::before { content: "Preferable qualifications:" }
 
 .job-description {
-	text-indent: 1em;
+	text-indent: 1em; /* Indent the first line */
 	&::before {
 		content: "Brief Description";
-		text-indent: 0;
+		text-indent: 0; /* No ident for the lazy title */
 	}
 }
 
@@ -260,7 +277,7 @@ input[type="radio"] {
     position: relative;
     background: #fff;
     vertical-align: middle;
-} 
+}
 
 /* Custom checked style */
 input[type="radio"]:checked {
