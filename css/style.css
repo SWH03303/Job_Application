@@ -287,13 +287,40 @@ input[type="radio"]:checked {
 
 /* ================================== ABOUT PAGE STYLING ================================== */
 #about--main {
+	display: flex;
 	width: 1200px;
-	min-width: 75%;
+	padding: 3em;
 
 }
 
 #about--company-logo { 
 	display: flex;
 	margin: auto;
-	width: 50%;
+	width: 500px;
+}
+
+#about--name {
+	font-size: 40pt;
+}
+
+#about--Main { gap: var(--spacing); }
+
+#about--about-us {
+	align-items: stretch;
+}
+
+#about--Description, #about--LMS, #about--BNQH {
+	background-color: #fff;
+	padding: 2em;
+	box-shadow: var(--shadow);
+	gap: var(--spacing);
+	border-radius: 2em 2em 2em 2em;
+	max-width: 500px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+#about--Description, #about--LMS, #about--BNQH {
+	align-items: flex-start;
 }
