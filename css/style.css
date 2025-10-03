@@ -51,7 +51,7 @@ header, footer {
 
 header > nav { width: 100%; }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+section, image, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
 
 a {
 	color: black;
@@ -290,6 +290,7 @@ input[type="radio"]:checked {
 	display: flex;
 	width: 1200px;
 	padding: 3em;
+	gap: var(--spacing); 
 
 }
 
@@ -303,17 +304,17 @@ input[type="radio"]:checked {
 	font-size: 40pt;
 }
 
-#about--Main { gap: var(--spacing); }
 
-#about--about-us {
+#about--about-us, #about--member-info {
 	align-items: stretch;
+	gap: var(--spacing); 
 }
+
 
 #about--Description, #about--LMS, #about--BNQH {
 	background-color: #fff;
-	padding: 2em;
+	padding: 2em 2em 2em 2em;
 	box-shadow: var(--shadow);
-	gap: var(--spacing);
 	border-radius: 2em 2em 2em 2em;
 	max-width: 500px;
     width: 100%;
@@ -323,4 +324,12 @@ input[type="radio"]:checked {
 
 #about--Description, #about--LMS, #about--BNQH {
 	align-items: flex-start;
+}
+
+#about--Description {
+	height: 100%;
+}
+
+#about--LMS, #about--BNQH {
+	height: 50%;
 }
