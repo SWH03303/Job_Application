@@ -339,8 +339,6 @@ input[type="radio"]:checked {
 		padding: 20px;
 		justify-content: flex-start;
 	}
-
-	/* article:hover { background: #eaeaea; } */
 }
 
 .pfp {
@@ -349,23 +347,38 @@ input[type="radio"]:checked {
 	margin-bottom: 1em;
 }
 
+#about--socials {
+	display: flex;
+	justify-content: flex-start;
+	gap: var(--spacing); 
+}
 .socials {
 	width: 75px;
 	height: 75px;
 	margin-top: 1em;
-	
 }	
+.socials:hover {
+	animation: moveBox 0.3s linear; 
+}
+@keyframes moveBox {
+	25% { transform: translateY(-10px);}
+	75% { transform: translateY(0px);}
+}
 	
 #about--BNQH:hover, #about--LMS:hover {
-	animation: moveBox1 0.3s linear; 
-	animation-play-state: running;   
+	animation: moveBox1 0.3s linear;  
 }	
 @keyframes moveBox1 {
-	25% { transform: translateY(-10px); background-color: rgb(226, 226, 226); }
+	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
 	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
 }
 
 
 .studentDetails {
 	margin-top: .5em;
+}
+
+#about--projectManagement {
+	margin-top: 3em;
+	margin-bottom: -2em;
 }
