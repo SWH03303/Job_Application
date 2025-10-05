@@ -308,6 +308,10 @@ input[type="radio"]:checked {
 	gap: var(--spacing); 
 }
 
+#about--logo-and-name {
+	gap: var(--spacing); 
+	margin-bottom: 2em;
+}
 
 #about--Description, #about--LMS, #about--BNQH {
 	background-color: #fff;
@@ -315,20 +319,7 @@ input[type="radio"]:checked {
 	box-shadow: var(--shadow);
 	border-radius: 2em 2em 2em 2em;
 	max-width: 500px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#about--Description, #about--LMS, #about--BNQH {
 	align-items: flex-start;
-}
-
-#about--Description {
-	height: 100%;
-}
-
-#about--LMS, #about--BNQH {
-	height: 50%;
 }
 
 #about--member-info {
@@ -339,9 +330,9 @@ input[type="radio"]:checked {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 75%;
 		/* Hide all contents on the toggle trigger */
-		list-style-type: none;
+		/* list-style-type: none; */
 	}
 
 	article {
@@ -349,5 +340,32 @@ input[type="radio"]:checked {
 		justify-content: flex-start;
 	}
 
-	article:hover { background: #eaeaea; }
+	/* article:hover { background: #eaeaea; } */
+}
+
+.pfp {
+	width: 150px;
+	border-radius: 50%;
+	margin-bottom: 1em;
+}
+
+.socials {
+	width: 75px;
+	height: 75px;
+	margin-top: 1em;
+	
+}	
+	
+#about--BNQH:hover, #about--LMS:hover {
+	animation: moveBox1 0.3s linear; 
+	animation-play-state: running;   
+}	
+@keyframes moveBox1 {
+	25% { transform: translateY(-10px); background-color: rgb(226, 226, 226); }
+	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
+}
+
+
+.studentDetails {
+	margin-top: .5em;
 }

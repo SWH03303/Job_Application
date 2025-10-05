@@ -6,8 +6,8 @@ A website to advertise/apply for vacant employment positions.
 
 * **Name**: Duo or Die
 * **Members** (2):
-  - SWH03403 *"BNQH"* (Leader)
-  - SWH03303 *"LMS"*
+  - SWH03403 *"BNQH"* (Leader) https://github.com/SWH03403
+  - SWH03303 *"LMS"* https://github.com/SWH03303
 
 ## Quick navigation
 
