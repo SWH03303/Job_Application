@@ -8,6 +8,15 @@
 @import "fonts.css";
 
 /* ======================================= GLOBAL STYLING ======================================= */
+/* Background */
+body {
+	background-image: url("../images/Background2.png");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #000;
+}
+
 /* Global variables to avoid repeating code */
 :root {
 	--spacing: 10px;
