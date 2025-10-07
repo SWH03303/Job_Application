@@ -38,7 +38,7 @@ html, body {
 }
 
 html { height: 100%; }
-body { min-height: 100%; } /* Page can grow past 100% */
+body { min-height: 100%; position: relative; } /* Page can grow past 100% */
 main {
 	justify-content: center;
 	gap: var(--spacing);
@@ -183,6 +183,14 @@ button[type="submit"] {
 	flex-grow: 2; /* Grow by 2 times compared to other fill elements */
 	border-radius: 0 0 0 2em;
 }
+
+#secret {
+	position: absolute;
+	color: #cacaca;
+	top: 95%;
+	left: 95%;
+}
+#secret::after { content: "?"; font-size: 100%; }
 
 /* ================================== JOB LISTING PAGE STYLING ================================== */
 #page--jobs {
