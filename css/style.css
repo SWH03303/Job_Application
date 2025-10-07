@@ -138,19 +138,19 @@ summary {
 
 	/* The `summary` element is used to show/hide content of the `details` element with a click.
 	 * This expands the element to exactly cover the listing box, turning the box into a button. */
-	article { position: relative; /* Anchor */ }
-
 	article {
+		flex-basis: 200px;
+		flex-grow: 1;
+		max-width: 100%;
+
+		position: relative; /* Anchor */
 		padding: 20px;
+		border-radius: 1em;
 		justify-content: flex-start;
 	}
 
 	article:hover { background: #eaeaea; }
-	article:not(:has(> details[open])) {
-		/* Divide the space for exactly 3 elements each row:
-		 * 20px from container padding, 40px from element padding */
-		width: calc((100% - 20px) / 3 - 40px);
-	}
+	article:has(> details[open]) { flex-basis: 100%; }
 
 	*::before {
 		margin-right: .5em; /* Lazy whitespace */
@@ -159,7 +159,7 @@ summary {
 }
 
 #category-navigation {
-	padding: 2em;
+	padding: 1.5em;
 	position: sticky;
 	top: 100px;
 	border-radius: 1em;
@@ -187,7 +187,7 @@ summary {
 .categorized-listing {
 	padding: 0 var(--spacing);
 	display: flex;
-	flex-flow: row wrap; /* Place the 4th (and so on) element below existing ones */
+	flex-flow: row wrap; /* Place overflowing elements below existing ones */
 	gap: var(--spacing);
 
 	&:empty {
@@ -201,7 +201,10 @@ summary {
 
 #listing-categories {
 	gap: var(--spacing);
-	h1 { padding: .4em .8em; }
+	h1 {
+		padding: .4em .8em;
+		&:not(:first-child) { margin-top: 50px; }
+	}
 	.minor { font-weight: 600; }
 }
 
@@ -241,6 +244,11 @@ summary {
 	}
 }
 
+/* Narrow screen styling */
+@media (max-width: 1200px) {
+	#page--jobs { flex-direction: column; align-items: center; }
+	#category-navigation { position: static; }
+}
 
 /* ================================== APPLY PAGE STYLING ================================== */
 
