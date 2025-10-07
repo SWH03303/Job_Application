@@ -289,13 +289,6 @@ button[type="submit"] {
 	.minor { font-weight: 600; }
 }
 
-#category-navigation,
-#listing-categories h1,
-#listing-categories article {
-	background-color: white;
-	box-shadow: var(--shadow);
-}
-
 /* Move location/salary texts to the bottom so they are aligned to that in other listings of the
  * same row. */
 /* NOTE: This should've been named `listing-preview` */
@@ -346,13 +339,12 @@ button[type="submit"] {
 }
 
 #application-form {
+	--round: 2em;
+
 	gap: 5px;
 	width: 400px;
 	max-width: 100%;
-	background-color: #fff;
-	padding: 2em;
-	box-shadow: var(--shadow);
-	border-radius: 2em;
+	background-color: white;
 
 	/* Highlight (by inverting colors of) the label when its corresponding input is focused. */
 	> *:has(:focus) label {
@@ -447,6 +439,7 @@ label[for="input-start"] { font-weight: 500; }
 /* ================================== ABOUT PAGE STYLING ================================== */
 #page--about {
 	--padding: 20px;
+	--round: 1.5em;
 	--profile-icon-size: 70px;
 	--social-icon-size: 80px;
 
@@ -470,12 +463,7 @@ label[for="input-start"] { font-weight: 500; }
 #members-info, #members-info > :last-child { gap: var(--spacing); }
 
 #members-info > :first-child, .member-profile {
-	background-color: #fff;
-	padding: 2em;
-	box-shadow: var(--shadow);
-	border-radius: 2em;
 	max-width: 500px;
-
 	h1 { font-size: 28pt; }
 }
 
