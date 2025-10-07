@@ -417,55 +417,41 @@ label[for="input-start"] { font-weight: 500; }
 #input-start { border: none; }
 
 /* ================================== ABOUT PAGE STYLING ================================== */
-#about--main {
+#page--about {
 	--padding: 20px;
 	--profile-icon-size: 70px;
 	--social-icon-size: 80px;
 
-	display: flex;
-	width: 1200px;
-	padding: 3em;
-	gap: var(--spacing);
+	article {
+		position: relative; /* Anchor */
+		padding: var(--padding);
+	}
 
+	gap: 50px;
+
+	h1, h2 { line-height: 1em; }
+	h1 { font-size: 40pt; }
+	h2 { font-size: 20pt; }
 	details[open] { padding-bottom: calc(var(--social-icon-size) + var(--spacing) * 2); }
 }
 
-#about--company-logo {
-	display: flex;
-	width: 500px;
-}
+#page--about #company-logo { max-width: 500px; margin-bottom: 20px; }
 
-#about--name {
-	font-size: 40pt;
-}
+#members-info, #members-info > :last-child { gap: var(--spacing); }
 
-
-#about--about-us, #about--member-info {
-	align-items: stretch;
-	gap: var(--spacing);
-}
-
-#about--logo-and-name {
-	gap: var(--spacing);
-	margin-bottom: 2em;
-}
-
-#about--Description, .member-profile {
+#members-info > :first-child, .member-profile {
 	background-color: #fff;
 	padding: 2em;
 	box-shadow: var(--shadow);
 	border-radius: 2em;
 	max-width: 500px;
-}
 
-#about--member-info article {
-	position: relative; /* Anchor */
-	padding: var(--padding);
+	h1 { font-size: 28pt; }
 }
 
 .member-profile {
+	padding: 1em;
 	width: calc(400px - var(--padding) * 2);
-	h2 { font-size: 20pt; line-height: 1em; }
 	&:hover { background-color: #eee; }
 }
 
