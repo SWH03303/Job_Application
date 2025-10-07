@@ -6,7 +6,7 @@
 	<title>DoD - Application Submission</title>
 	<link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="flex-y">
 	<header class="flex">
 		<nav id="global-navigation" class="fill flex">
 			<a href="/index.html">Home</a>
@@ -17,115 +17,99 @@
 		<a href="mailto:info@duoordxe.com.au">Contact Us</a>
 	</header>
 
+	<main id="page--apply" class="fill flex-y">
+		<section id="application-header" class="flex-y flex-o">
+			<h1>Application Submission</h1>
+			<p>To apply for a job, please fill the following form<p>
+		</section>
 
-	<main id="apply" class="fill flex-y">
-		<section class="flex flex-o" id = "apply--head">
-			<div>
-				<h1>Application Submission</h1>
-				<p>To apply for a job, please fill the following form:<p>
+		<form id="application-form" class="flex-y" enctype="multipart/form-data">
+			<h2>Personal information</h2>
+			<div class="flex">
+				<label for="input-name">Name</label>
+				<input id="input-name" class="fill" type="text" name="name-first" placeholder="First name" required>
+				<input class="fill" type="text" name="name-last" placeholder="Last name" required>
 			</div>
-			
-		</section>
-
-		<section class="flex flex-o" id = "apply--form">
-			<form enctype="multipart/form-data">
-				<div>
-					<h2>Personal information</h2>
-
-					<p><label for="apply--applicant-name">Full Name:</label>
-					<input type="text" id="apply--applicant-name" name="applicant-name" required>
-					</p>
-
-					<p><label for="apply--applicant-address">Address:</label>
-					<input type="text" id="apply--applicant-address" name="applicant-address" required>
-					</p>
-
-					<p><label for="apply--applicant-dob">Date of Birth:</label>
-					<input type="date" id="apply--applicant-dob" name="applicant-dob" required>
-					</p>
-
-					<p><label for="apply--applicant-phonenumber">Phone number:</label>
-					<input type="text" id="apply--applicant-phonenumber" name="applicant-phonenumber" pattern="[0-9]+" required>
-					</p>
-
-					<p><label for="apply--applicant-email">Email:</label>
-					<input type="text" id="apply--applicant-email" name="applicant-email" required>
-					</p>
-
-					<p><label for="apply--applicant-gender">Gender:</label>
-					<select id="apply--applicant-gender" name="applicant-gender" required>
-						<option value="">--Please choose--</option>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-						<option value="other">Other</option>
-					</select>
-					</p>
-
-					<p><label>Are you willing to submit to a background check if selected for employment?</label><br>
-					<input type="radio" id="apply--background-yes" name="background-check" value="yes" required>
-					<label for="apply--background-yes" class = "apply--radiobutton">Yes</label>
-					<input type="radio" id="apply--background-no" name="background-check" value="no">
-					<label for="apply--background-no" class = "apply--radiobutton">No</label>
-					</p>
-
-					<p><label>Have you ever been convicted of a felony?</label><br>
-					<input type="radio" id="apply--felony-yes" name="felony-check" value="yes" required>
-					<label for="apply--felony-yes" class = "apply--radiobutton">Yes</label>
-					<input type="radio" id="apply--felony-no" name="felony-check" value="no">
-					<label for="apply--felony-no" class = "apply--radiobutton">No</label>
-					</p>
-
-					<p><label>Are you a veteran?</label><br>
-					<input type="radio" id="apply--veteran-yes" name="veteran-check" value="yes" required>
-					<label for="apply--veteran-yes" class = "apply--radiobutton">Yes</label>
-					<input type="radio" id="apply--veteran-no" name="veteran-check" value="no">
-					<label for="apply--veteran-no" class = "apply--radiobutton">No</label>
-					</p>
-
-					<p><label for="apply--start-working-date">When are you available to start in case you are selected for employment?</label>
-					<input type="date" id="apply--start-working-date" name="start-working-date" required>
-					</p>
+			<div class="flex">
+				<label for="input-address">Address</label>
+				<input id="input-address" class="fill" type="text" name="address" placeholder="123 Abc Street, Xyz District" required>
+			</div>
+			<div class="flex">
+				<label for="input-dob">Date of birth</label>
+				<input id="input-dob" class="fill" type="date" name="dob" required>
+			</div>
+			<div class="flex">
+				<label for="input-phone">Phone number</label>
+				<input id="input-phone" class="fill" type="text" name="phone" placeholder="09XXXXXXXX" pattern="[0-9]+" required>
+			</div>
+			<div class="flex">
+				<label for="input-email">Email</label>
+				<input id="input-email" class="fill" type="text" name="email" placeholder="user@example.com" required>
+			</div>
+			<div class="flex">
+				<label for="input-gender">Gender</label>
+				<select id="input-gender" class="fill" name="gender" required>
+					<option value="">(choose one)</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<div class="flex input-yesno">
+				<label>Are you willing to submit to a background check if selected for employment?</label>
+				<input class="fill" type="radio" name="background" value="true" required>
+				<input class="fill" type="radio" name="background" value="false">
+			</div>
+			<div class="flex input-yesno">
+				<label>Have you ever been convicted of a felony?</label>
+				<input class="fill" type="radio" name="felony" value="true" required>
+				<input class="fill" type="radio" name="felony" value="false">
+			</div>
+			<div class="flex input-yesno">
+				<label>Are you a veteran?</label>
+				<input class="fill" type="radio" name="veteran" value="true" required>
+				<input class="fill" type="radio" name="veteran" value="false">
+			</div>
+			<div class="flex-y">
+				<label for="input-start">When are you available to start in case you are selected for employment?</label>
+				<div id="form-start-date" class="flex flex-o">
+					<input id="input-start" type="date" name="start-date" required>
 				</div>
+			</div>
 
-				<div>
-					<h2>Position information</h2>
+			<h2>Position information</h2>
+			<div class="flex">
+				<label for="input-company">Company name</label>
+				<input id="input-company" class="fill" type="text" name="company" placeholder="Frontier Justice Ltd" required>
+			</div>
+			<div class="flex">
+				<label for="input-refcode">Reference code</label>
+				<input id="input-refcode" class="fill" type="text" name="refcode" placeholder="XXXXX" required>
+			</div>
+			<div class="flex">
+				<label for="input-salary">Desired Salary</label>
+				<input id="input-salary" class="fill" type="text" name="salary" placeholder="$120,000 / year" required>
+			</div>
 
-					<p><label for="apply--company-name">Name of the company:</label>
-					<input type="text" id="apply--company-name" name="company-name" required>
-					</p>
-
-					<p><label for="apply--company-code">Reference code:</label>
-					<input type="text" id="apply--company-code" name="company-code" required>
-					</p>
-
-					<p><label for="apply--company-position">Position you are applying for:</label>
-					<input type="text" id="apply--company-position" name="company-position" required>
-					</p>
-
-					<p><label for="apply--desired-salary">Desired salary:</label>
-					<input type="text" id="apply--desired-salary" name="desired-salary" required>
-					</p>
-
-
-					<p><label>Time:</label><br>
-					<input type="radio" id="apply--company-time-full" name="company-time" value="full" required>
-					<label for="apply--company-time-full" class = "apply--radiobutton">Full-time</label>
-					<input type="radio" id="apply--company-time-part" name="company-time" value="part" required>
-					<label for="apply--company-time-part" class = "apply--radiobutton">Part-time</label>
-					<input type="radio" id="apply--company-time-temporary" name="company-time" value="temporary" required>
-					<label for="apply--company-time-part" class = "apply--radiobutton">Temporary</label>
-					</p>
-
-					<p><label for="apply--documents">Upload supporting documents (Resume, certificates, etc...):</label>
-					<input type="file" id="apply--documents" name="documents" multiple>
-					</p>
-				</div>
-				
-				<br>
-				<button type="submit" id = "apply--submitButton">Submit Application</button>
-
-			</form>
-		</section>
+			<div class="flex input-multi">
+				<label for="input-time-full">Time</label>
+				<input id="input-time-full" type="radio" name="time" value="full" required>
+				<label for="input-time-full" class="fill">Full-time</label>
+				<input id="input-time-part" type="radio" name="time" value="part" required>
+				<label for="input-time-part" class="fill">Part-time</label>
+				<input id="input-time-temporary" type="radio" name="time" value="temporary" required>
+				<label for="input-time-temporary" class="fill">Temporary</label>
+			</div>
+			<div class="flex-y">
+				<label for="input-documents">Additional supporting documents (resume, certificates, e.t.c.)</label>
+				<input id="input-documents" type="file" name="documents" multiple>
+			</div>
+			<button type="submit">Submit Application</button>
+		</form>
 	</main>
+
+	<footer class="flex flex-o">
+		<a id="project-anchor" href="https://dueordie.atlassian.net/jira/software/projects/WEBTECHPRJ/summary">Project Management</a>
+	</footer>
 </body>
 </html>

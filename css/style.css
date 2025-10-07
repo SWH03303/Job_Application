@@ -21,6 +21,10 @@ body {
 :root {
 	--spacing: 10px;
 	--shadow: 0 0 20px #0003;
+	--form-color: #eee;
+	--form-border: 2px solid var(--form-color);
+	--form-border-active: 2px solid black;
+	--select-color: black;
 }
 
 * { font-family: Poppins; } /* Default global font. */
@@ -60,7 +64,12 @@ header, footer {
 
 header > nav { width: 100%; }
 
-article, section, img, h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+article, section, p,
+h1, h2, h3, h4, h5, h6,
+img, video,
+input, label,
+table, td, th, tr,
+li, ol, ul { margin: 0; }
 
 a {
 	color: black;
@@ -78,6 +87,54 @@ summary {
 	width: 100%;
 	height: 100%;
 	list-style-type: none; /* Hide `::marker` pseudo element in toggle trigger */
+}
+
+label {
+	background-color: var(--form-color);
+	padding: .2em .6em;
+	border-radius: 1em 1em 0 0;
+	border-bottom: var(--form-border);
+	font-weight: bold;
+}
+input, select {
+	min-width: 0;
+	padding: .2em .6em;
+	background-color: white;
+	outline: none;
+	border: none;
+	border-bottom: var(--form-border);
+	font-size: 12pt;
+
+	&:focus { border-bottom: var(--form-border-active); }
+}
+input:not(:focus) { text-align: right; }
+select {
+	padding: 0;
+	font-weight: 500;
+}
+input::placeholder {
+	color: #aaa;
+	font-weight: 500;
+	text-align: right;
+}
+input[type="date"], select { text-align: right; }
+input[type="file"] {
+	min-width: 0;
+	font-weight: 600;
+	text-align: center;
+	&::file-selector-button { display: none; }
+}
+/* Form submission button */
+button[type="submit"] {
+	padding: 1em 2em;
+	font-size: 16pt;
+	font-weight: bold;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	border-radius: 1em;
+
+	&:hover { background-color: #333; }
 }
 
 /* Common flex attribute, `flex` is aliased to `flex-x` */
@@ -250,57 +307,103 @@ summary {
 }
 
 /* ================================== APPLY PAGE STYLING ================================== */
+#page--apply {
+	gap: 50px;
 
-#apply--form {
+	button[type="submit"],
+	h2:not(:first-child) { margin-top: 20px; }
+
+	h2 {
+		margin-bottom: 5px;
+		line-height: 1.2em;
+		text-align: center;
+	}
+}
+
+#application-form {
+	gap: 5px;
+	width: 400px;
+	max-width: 100%;
 	background-color: #fff;
 	padding: 2em;
 	box-shadow: var(--shadow);
-	gap: var(--spacing);
-	border-radius: 2em 2em 2em 2em;
-	max-width: 500px;
-    width: 100%;
-    margin: 2em auto;
-    box-sizing: border-box;
-	line-height: 2;
-}
+	border-radius: 2em;
 
-#apply--submitButton {
-	padding: 1em 2em;
-	font-size: 16pt;
-	font-weight: bold;
-	background-color: #000;
-	color: #fff;
-	border: none;
-	border-radius: 1em;
-	cursor: pointer;
-	display: block;
-    margin: 0 auto 0 auto;
-
-	&:hover { background-color: #333; }
-}
-
-.apply--radiobutton {
-    margin-right: 1.5em;
+	> *:has(:focus) label {
+		border-bottom: var(--form-border-active);
+		background-color: black;
+		color: white;
+	}
 }
 
 /* Hide the default radio */
 input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 3px solid #888;
-    border-radius: 50%;
-    cursor: pointer;
-    background: #fff;
-    vertical-align: middle;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
-/* Custom checked style */
-input[type="radio"]:checked {
-    border-color: #333;
-    background: #333;
+.input-yesno {
+	align-items: center;
+
+	label {
+		margin-right: 10px;
+		border-radius: 1em;
+		font-weight: 500;
+	}
+
+	input {
+		border: 2px solid var(--select-color);
+		text-align: center;
+		min-width: 50px;
+	}
+	input:not(:last-child) { border-radius: 1em 0 0 1em; }
+	input:last-child { border-left: none; border-radius: 0 1em 1em 0; }
+	input:checked {
+		background-color: var(--select-color);
+		color: white;
+		font-weight: bold;
+	}
+	input[value="true"]::before { content: "Yes"; }
+	input[value="false"]::before { content: "No"; }
 }
+
+#application-form .input-multi {
+	label:first-child {
+		border: none;
+		margin-right: 10px;
+		border-radius: 1em;
+	}
+	label:not(:first-child) {
+		border: var(--form-border-active);
+		background-color: white;
+		color: black;
+		font-weight: normal;
+		text-align: center;
+		border-radius: 0;
+	}
+	label:not(:last-child) { border-right: none; }
+	input:first-of-type + label { border-radius: 1em 0 0 1em; }
+	label:last-child { border-radius: 0 1em 1em 0; }
+
+	&:has(:active) label:first-child,
+	input:checked + label {
+		background-color: var(--select-color);
+		color: white;
+		font-weight: bold;
+	}
+	input { padding: 0; max-width: 0; }
+}
+
+#application-form input[type="file"],
+#form-start-date {
+	border: var(--form-border);
+	border-radius: 0 0 1em 1em;
+}
+#application-form input[type="file"]:focus,
+#form-start-date:has(input:focus) { border: var(--form-border-active); }
+label[for="input-documents"],
+label[for="input-start"] { font-weight: 500; }
+#input-start { border: none; }
 
 /* ================================== ABOUT PAGE STYLING ================================== */
 #about--main {
@@ -378,9 +481,4 @@ input[type="radio"]:checked {
 @keyframes moveBox1 {
 	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
 	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
-}
-
-#about--projectManagement {
-	margin-top: 3em;
-	margin-bottom: -2em;
 }
