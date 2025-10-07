@@ -297,10 +297,15 @@ input[type="radio"]:checked {
 
 /* ================================== ABOUT PAGE STYLING ================================== */
 #about--main {
+	--padding: 20px;
+	--social-icon-size: 80px;
+
 	display: flex;
 	width: 1200px;
 	padding: 3em;
 	gap: var(--spacing);
+
+	details[open] { padding-bottom: calc(var(--social-icon-size) + var(--spacing) * 2); }
 }
 
 #about--company-logo {
@@ -325,20 +330,15 @@ input[type="radio"]:checked {
 
 #about--Description, #about--LMS, #about--BNQH {
 	background-color: #fff;
-	padding: 2em 2em 2em 2em;
+	padding: 2em;
 	box-shadow: var(--shadow);
-	border-radius: 2em 2em 2em 2em;
+	border-radius: 2em;
 	max-width: 500px;
-	align-items: flex-start;
 }
 
-#about--member-info {
-	article { position: relative; /* Anchor */ }
-
-	article {
-		padding: 20px;
-		justify-content: flex-start;
-	}
+#about--member-info article {
+	position: relative; /* Anchor */
+	padding: var(--padding);
 }
 
 .pfp {
@@ -347,19 +347,16 @@ input[type="radio"]:checked {
 	margin-bottom: 1em;
 }
 
-#about--socials {
-	display: flex;
-	justify-content: flex-start;
+.socials-container {
+	/* Account for parent */
+	position: absolute;
+	right: var(--padding);
+	bottom: var(--padding);
+
 	gap: var(--spacing);
 }
-.socials {
-	width: 75px;
-	height: 75px;
-	margin-top: 1em;
-}
-.socials:hover {
-	animation: moveBox 0.3s linear;
-}
+.social { width: var(--social-icon-size); height: var(--social-icon-size); }
+.social:hover { animation: moveBox 0.3s linear; }
 @keyframes moveBox {
 	25% { transform: translateY(-10px);}
 	75% { transform: translateY(0px);}
@@ -371,11 +368,6 @@ input[type="radio"]:checked {
 @keyframes moveBox1 {
 	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
 	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
-}
-
-
-.studentDetails {
-	margin-top: .5em;
 }
 
 #about--projectManagement {
