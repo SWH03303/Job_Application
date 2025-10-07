@@ -21,6 +21,8 @@ body {
 :root {
 	--spacing: 10px;
 	--shadow: 0 0 20px #0003;
+	--form-color: #eee;
+	--form-border: 2px solid var(--form-color);
 }
 
 * { font-family: Poppins; } /* Default global font. */
@@ -85,6 +87,33 @@ summary {
 	list-style-type: none; /* Hide `::marker` pseudo element in toggle trigger */
 }
 
+label {
+	background-color: var(--form-color);
+	padding: .2em .6em;
+	border-radius: 1em 1em 0 0;
+	border: var(--form-border);
+	font-weight: bold;
+}
+input, select {
+	min-width: 0;
+	padding: .2em .6em;
+	background-color: white;
+	outline: none;
+	border: none;
+	border-bottom: var(--form-border);
+	font-size: 12pt;
+}
+select {
+	padding: 0;
+	font-weight: 500;
+}
+input::placeholder {
+	color: #aaa;
+	font-weight: 500;
+}
+input[type="date"], select {
+	text-align: right;
+}
 /* Form submission button */
 button[type="submit"] {
 	padding: 1em 2em;
@@ -282,12 +311,21 @@ button[type="submit"] {
 }
 
 #application-form {
+	gap: 5px;
 	width: 400px;
 	max-width: 100%;
 	background-color: #fff;
 	padding: 2em;
 	box-shadow: var(--shadow);
 	border-radius: 2em;
+
+	p {
+		display: flex;
+		input, select {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
 }
 
 /* Hide the default radio */
