@@ -159,9 +159,9 @@ button[type="submit"] {
 .box {
 	padding: var(--round);
 	border-radius: var(--round);
-	background-color: #fffa;
+	background-color: #fffa; /* ~60% transparent white */
 	box-shadow: 0 0 20px #0004;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px); /* Blur everything behind this element */
 }
 
 .important { font-weight: bold; }
@@ -456,6 +456,12 @@ label[for="input-start"] { font-weight: 500; }
 
 	/* Add extra padding when the details are expanded */
 	details[open] { padding-bottom: calc(var(--social-icon-size) + var(--spacing) * 2); }
+}
+
+#page--about > :first-child {
+	--round: 2em;
+	background: none;
+	border: 5px solid black;
 }
 
 #page--about #company-logo { max-width: 500px; margin-bottom: 20px; }
