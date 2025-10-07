@@ -10,7 +10,7 @@
 /* ======================================= GLOBAL STYLING ======================================= */
 /* Background */
 body {
-	background-image: url("../images/Background2.png");
+	background-image: url("/images/background.png");
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
@@ -299,10 +299,10 @@ input[type="radio"]:checked {
 	display: flex;
 	width: 1200px;
 	padding: 3em;
-	gap: var(--spacing); 
+	gap: var(--spacing);
 }
 
-#about--company-logo { 
+#about--company-logo {
 	display: flex;
 	width: 500px;
 }
@@ -314,11 +314,11 @@ input[type="radio"]:checked {
 
 #about--about-us, #about--member-info {
 	align-items: stretch;
-	gap: var(--spacing); 
+	gap: var(--spacing);
 }
 
 #about--logo-and-name {
-	gap: var(--spacing); 
+	gap: var(--spacing);
 	margin-bottom: 2em;
 }
 
@@ -359,24 +359,24 @@ input[type="radio"]:checked {
 #about--socials {
 	display: flex;
 	justify-content: flex-start;
-	gap: var(--spacing); 
+	gap: var(--spacing);
 }
 .socials {
 	width: 75px;
 	height: 75px;
 	margin-top: 1em;
-}	
+}
 .socials:hover {
-	animation: moveBox 0.3s linear; 
+	animation: moveBox 0.3s linear;
 }
 @keyframes moveBox {
 	25% { transform: translateY(-10px);}
 	75% { transform: translateY(0px);}
 }
-	
+
 #about--BNQH:hover, #about--LMS:hover {
-	animation: moveBox1 0.3s linear;  
-}	
+	animation: moveBox1 0.3s linear;
+}
 @keyframes moveBox1 {
 	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
 	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
