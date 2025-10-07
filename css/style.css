@@ -79,8 +79,8 @@ a {
 	&:not(:hover) { text-decoration: none; }
 }
 
-/* Dr. "I Hate Colors" */
-img { filter: grayscale(1); }
+/* Dr. "I Loath Colors" */
+html { filter: grayscale(1); }
 
 /* Part of the `details` element to expand/collapse extra content */
 summary {
