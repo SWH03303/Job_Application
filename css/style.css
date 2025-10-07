@@ -331,7 +331,11 @@ button[type="submit"] {
 			flex-grow: 1;
 		}
 	}
-	p:has(:focus) label { border-bottom: var(--form-border-active); }
+	p:has(:focus) label {
+		border-bottom: var(--form-border-active);
+		background-color: black;
+		color: white;
+	}
 }
 
 /* Hide the default radio */
@@ -341,7 +345,7 @@ input[type="radio"] {
 }
 
 .input-yesno {
-	--select-color: #444;
+	--select-color: black;
 	align-items: center;
 
 	label {
