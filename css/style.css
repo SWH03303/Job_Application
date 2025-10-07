@@ -23,6 +23,7 @@ body {
 	--shadow: 0 0 20px #0003;
 	--form-color: #eee;
 	--form-border: 2px solid var(--form-color);
+	--form-border-active: 2px solid black;
 }
 
 * { font-family: Poppins; } /* Default global font. */
@@ -91,7 +92,7 @@ label {
 	background-color: var(--form-color);
 	padding: .2em .6em;
 	border-radius: 1em 1em 0 0;
-	border: var(--form-border);
+	border-bottom: var(--form-border);
 	font-weight: bold;
 }
 input, select {
@@ -102,6 +103,8 @@ input, select {
 	border: none;
 	border-bottom: var(--form-border);
 	font-size: 12pt;
+
+	&:focus { border-bottom: var(--form-border-active); }
 }
 input:not(:focus) { text-align: right; }
 select {
@@ -328,25 +331,39 @@ button[type="submit"] {
 			flex-grow: 1;
 		}
 	}
+	p:has(:focus) label { border-bottom: var(--form-border-active); }
 }
 
 /* Hide the default radio */
 input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 3px solid #888;
-    border-radius: 50%;
-    cursor: pointer;
-    background: #fff;
-    vertical-align: middle;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
-/* Custom checked style */
-input[type="radio"]:checked {
-    border-color: #333;
-    background: #333;
+.input-yesno {
+	--select-color: #444;
+	align-items: center;
+
+	label {
+		margin-right: 10px;
+		border-radius: 1em;
+		font-weight: 500;
+	}
+
+	input {
+		border: 2px solid var(--select-color);
+		text-align: center;
+		min-width: 50px;
+	}
+	input:not(:last-child) { border-radius: 1em 0 0 1em; }
+	input:last-child { border-left: none; border-radius: 0 1em 1em 0; }
+	input:checked {
+		background-color: var(--select-color);
+		color: white;
+		font-weight: bold;
+	}
+	input[value="true"]::before { content: "Yes"; }
+	input[value="false"]::before { content: "No"; }
 }
 
 /* ================================== ABOUT PAGE STYLING ================================== */
