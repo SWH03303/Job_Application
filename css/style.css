@@ -503,3 +503,27 @@ label[for="input-start"] { font-weight: 500; }
 	25% { transform: translateY(-10px);}
 	75% { transform: translateY(0px);}
 }
+/* Narrow screen styling */
+@media (max-width: 900px) {
+	#members-info { flex-direction: column; align-items: center; }
+	#another-box::after { display: none; }
+}
+
+/* Ow< */
+#page--about:has(details:not([open])) #another-box::after { display: none; }
+#another-box {
+	position: relative;
+
+	&::after {
+		background-image: url("/images/cute.png");
+		background-size: cover;
+		content: "";
+		opacity: 90%;
+		width: 240px;
+		height: 160px;
+		position: absolute;
+		right: 10px;
+		bottom: -19px;
+		z-index: 10;
+	}
+}
