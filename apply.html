@@ -25,83 +25,83 @@
 
 		<form id="application-form" class="flex-y" enctype="multipart/form-data">
 			<h2>Personal information</h2>
-			<p>
+			<div class="flex">
 				<label for="input-name">Name</label>
-				<input id="input-name" type="text" name="name-first" placeholder="First name" required>
-				<input type="text" name="name-last" placeholder="Last name" required>
-			</p>
-			<p>
+				<input id="input-name" class="fill" type="text" name="name-first" placeholder="First name" required>
+				<input class="fill" type="text" name="name-last" placeholder="Last name" required>
+			</div>
+			<div class="flex">
 				<label for="input-address">Address</label>
-				<input id="input-address" type="text" name="address" placeholder="123 Abc Street, Xyz District" required>
-			</p>
-			<p>
+				<input id="input-address" class="fill" type="text" name="address" placeholder="123 Abc Street, Xyz District" required>
+			</div>
+			<div class="flex">
 				<label for="input-dob">Date of birth</label>
-				<input id="input-dob" type="date" name="dob" required>
-			</p>
-			<p>
+				<input id="input-dob" class="fill" type="date" name="dob" required>
+			</div>
+			<div class="flex">
 				<label for="input-phone">Phone number</label>
-				<input id="input-phone" type="text" name="phone" placeholder="09XXXXXXXX" pattern="[0-9]+" required>
-			</p>
-			<p>
+				<input id="input-phone" class="fill" type="text" name="phone" placeholder="09XXXXXXXX" pattern="[0-9]+" required>
+			</div>
+			<div class="flex">
 				<label for="input-email">Email</label>
-				<input id="input-email" type="text" name="email" placeholder="user@example.com" required>
-			</p>
-			<p>
+				<input id="input-email" class="fill" type="text" name="email" placeholder="user@example.com" required>
+			</div>
+			<div class="flex">
 				<label for="input-gender">Gender</label>
-				<select id="input-gender" name="gender" required>
+				<select id="input-gender" class="fill" name="gender" required>
 					<option value="">(choose one)</option>
 					<option value="male">Male</option>
 					<option value="female">Female</option>
 					<option value="other">Other</option>
 				</select>
-			</p>
-			<p class="input-yesno">
+			</div>
+			<div class="flex input-yesno">
 				<label>Are you willing to submit to a background check if selected for employment?</label>
-				<input type="radio" name="background" value="true" required>
-				<input type="radio" name="background" value="false">
-			</p>
-			<p class="input-yesno">
+				<input class="fill" type="radio" name="background" value="true" required>
+				<input class="fill" type="radio" name="background" value="false">
+			</div>
+			<div class="flex input-yesno">
 				<label>Have you ever been convicted of a felony?</label>
-				<input type="radio" name="felony" value="true" required>
-				<input type="radio" name="felony" value="false">
-			</p>
-			<p class="input-yesno">
+				<input class="fill" type="radio" name="felony" value="true" required>
+				<input class="fill" type="radio" name="felony" value="false">
+			</div>
+			<div class="flex input-yesno">
 				<label>Are you a veteran?</label>
-				<input type="radio" name="veteran" value="true" required>
-				<input type="radio" name="veteran" value="false">
-			</p>
-			<p class="flex-y">
+				<input class="fill" type="radio" name="veteran" value="true" required>
+				<input class="fill" type="radio" name="veteran" value="false">
+			</div>
+			<div id="form-start-date" class="flex-y">
 				<label for="input-start">When are you available to start in case you are selected for employment?</label>
-				<input id="input-start" type="date" name="start-date" required>
-			</p>
+				<input id="input-start" class="fill" type="date" name="start-date" required>
+			</div>
 
 			<h2>Position information</h2>
-			<p>
+			<div class="flex">
 				<label for="input-company">Company name</label>
-				<input id="input-company" type="text" name="company" placeholder="Frontier Justice Ltd" required>
-			</p>
-			<p>
+				<input id="input-company" class="fill" type="text" name="company" placeholder="Frontier Justice Ltd" required>
+			</div>
+			<div class="flex">
 				<label for="input-refcode">Reference code</label>
-				<input id="input-refcode" type="text" name="refcode" placeholder="XXXXX" required>
-			</p>
-			<p>
+				<input id="input-refcode" class="fill" type="text" name="refcode" placeholder="XXXXX" required>
+			</div>
+			<div class="flex">
 				<label for="input-salary">Desired Salary</label>
-				<input id="input-salary" type="text" name="salary" placeholder="$120,000 / year" required>
-			</p>
+				<input id="input-salary" class="fill" type="text" name="salary" placeholder="$120,000 / year" required>
+			</div>
 
-			<p>
+			<div class="flex">
 				<label>Time</label>
-				<input id="input-time-full" type="radio" name="time" value="full" required>
+				<input id="input-time-full" class="fill" type="radio" name="time" value="full" required>
 				<label for="input-time-full">Full-time</label>
-				<input id="input-time-part" type="radio" name="time" value="part" required>
+				<input id="input-time-part" class="fill" type="radio" name="time" value="part" required>
 				<label for="input-time-part">Part-time</label>
-				<input id="input-time-temporary" type="radio" name="time" value="temporary" required>
+				<input id="input-time-temporary" class="fill" type="radio" name="time" value="temporary" required>
 				<label for="input-time-part">Temporary</label>
-			</p>
-			<p>
+			</div>
+			<div class="flex">
 				<label for="input-documents">Additional supporting documents (resume, certificates, e.t.c.)</label>
-				<input id="input-documents" type="file" name="documents" multiple>
-			</p>
+				<input id="input-documents" class="fill" type="file" name="documents" multiple>
+			</div>
 			<button type="submit">Submit Application</button>
 		</form>
 	</main>

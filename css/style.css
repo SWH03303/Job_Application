@@ -324,14 +324,7 @@ button[type="submit"] {
 	box-shadow: var(--shadow);
 	border-radius: 2em;
 
-	p {
-		display: flex;
-		input, select {
-			flex-basis: 0;
-			flex-grow: 1;
-		}
-	}
-	p:has(:focus) label {
+	> *:has(:focus) label {
 		border-bottom: var(--form-border-active);
 		background-color: black;
 		color: white;
