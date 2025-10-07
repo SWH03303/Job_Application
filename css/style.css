@@ -298,6 +298,7 @@ input[type="radio"]:checked {
 /* ================================== ABOUT PAGE STYLING ================================== */
 #about--main {
 	--padding: 20px;
+	--profile-icon-size: 70px;
 	--social-icon-size: 80px;
 
 	display: flex;
@@ -328,7 +329,7 @@ input[type="radio"]:checked {
 	margin-bottom: 2em;
 }
 
-#about--Description, #about--LMS, #about--BNQH {
+#about--Description, .member-profile {
 	background-color: #fff;
 	padding: 2em;
 	box-shadow: var(--shadow);
@@ -341,10 +342,12 @@ input[type="radio"]:checked {
 	padding: var(--padding);
 }
 
-.pfp {
-	width: 150px;
+.member-profile h1 { line-height: 1em; }
+
+.avarta {
+	width: var(--profile-icon-size);
+	height: var(--profile-icon-size);
 	border-radius: 50%;
-	margin-bottom: 1em;
 }
 
 .socials-container {
