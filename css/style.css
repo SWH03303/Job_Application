@@ -24,6 +24,7 @@ body {
 	--form-color: #eee;
 	--form-border: 2px solid var(--form-color);
 	--form-border-active: 2px solid black;
+	--select-color: black;
 }
 
 * { font-family: Poppins; } /* Default global font. */
@@ -338,7 +339,6 @@ input[type="radio"] {
 }
 
 .input-yesno {
-	--select-color: black;
 	align-items: center;
 
 	label {
@@ -361,6 +361,33 @@ input[type="radio"] {
 	}
 	input[value="true"]::before { content: "Yes"; }
 	input[value="false"]::before { content: "No"; }
+}
+
+#application-form .input-multi {
+	label:first-child {
+		border: none;
+		margin-right: 10px;
+		border-radius: 1em;
+	}
+	label:not(:first-child) {
+		border: var(--form-border-active);
+		background-color: white;
+		color: black;
+		font-weight: normal;
+		text-align: center;
+		border-radius: 0;
+	}
+	label:not(:last-child) { border-right: none; }
+	input:first-of-type + label { border-radius: 1em 0 0 1em; }
+	label:last-child { border-radius: 0 1em 1em 0; }
+
+	&:has(:active) label:first-child,
+	input:checked + label {
+		background-color: var(--select-color);
+		color: white;
+		font-weight: bold;
+	}
+	input { padding: 0; max-width: 0; }
 }
 
 #form-start-date {

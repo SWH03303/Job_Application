@@ -91,16 +91,16 @@
 				<input id="input-salary" class="fill" type="text" name="salary" placeholder="$120,000 / year" required>
 			</div>
 
-			<div class="flex">
-				<label>Time</label>
-				<input id="input-time-full" class="fill" type="radio" name="time" value="full" required>
-				<label for="input-time-full">Full-time</label>
-				<input id="input-time-part" class="fill" type="radio" name="time" value="part" required>
-				<label for="input-time-part">Part-time</label>
-				<input id="input-time-temporary" class="fill" type="radio" name="time" value="temporary" required>
-				<label for="input-time-part">Temporary</label>
+			<div class="flex input-multi">
+				<label for="input-time-full">Time</label>
+				<input id="input-time-full" type="radio" name="time" value="full" required>
+				<label for="input-time-full" class="fill">Full-time</label>
+				<input id="input-time-part" type="radio" name="time" value="part" required>
+				<label for="input-time-part" class="fill">Part-time</label>
+				<input id="input-time-temporary" type="radio" name="time" value="temporary" required>
+				<label for="input-time-temporary" class="fill">Temporary</label>
 			</div>
-			<div class="flex">
+			<div id="form-upload" class="flex">
 				<label for="input-documents">Additional supporting documents (resume, certificates, e.t.c.)</label>
 				<input id="input-documents" class="fill" type="file" name="documents" multiple>
 			</div>
