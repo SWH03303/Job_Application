@@ -379,8 +379,3 @@ input[type="radio"]:checked {
 	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
 	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
 }
-
-#about--projectManagement {
-	margin-top: 3em;
-	margin-bottom: -2em;
-}
