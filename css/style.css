@@ -11,10 +11,10 @@
 /* Background */
 body {
 	background-image: url("/images/background.png");
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
+	background-attachment: scroll;
 	background-color: #000;
+	background-position: center 0;
+	background-size: 500px;
 }
 
 /* Global variables to avoid repeating code */
