@@ -465,7 +465,7 @@ label[for="input-start"] { font-weight: 500; }
 
 .member-profile {
 	width: calc(400px - var(--padding) * 2);
-	h1 { line-height: 1em; }
+	h2 { font-size: 20pt; line-height: 1em; }
 	&:hover { background-color: #eee; }
 }
 
