@@ -455,7 +455,10 @@ label[for="input-start"] { font-weight: 500; }
 	padding: var(--padding);
 }
 
-.member-profile h1 { line-height: 1em; }
+.member-profile {
+	width: calc(400px - var(--padding) * 2);
+	h1 { line-height: 1em; }
+}
 
 .avarta {
 	width: var(--profile-icon-size);
@@ -464,14 +467,14 @@ label[for="input-start"] { font-weight: 500; }
 }
 
 .socials-container {
-	/* Account for parent */
+	height: var(--social-icon-size);
 	position: absolute;
 	right: var(--padding);
 	bottom: var(--padding);
 
 	gap: var(--spacing);
 }
-.social { width: var(--social-icon-size); height: var(--social-icon-size); }
+.social { width: var(--social-icon-size); }
 .social:hover { animation: moveBox 0.3s linear; }
 @keyframes moveBox {
 	25% { transform: translateY(-10px);}
