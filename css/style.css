@@ -85,6 +85,19 @@ summary {
 	list-style-type: none; /* Hide `::marker` pseudo element in toggle trigger */
 }
 
+/* Form submission button */
+button[type="submit"] {
+	padding: 1em 2em;
+	font-size: 16pt;
+	font-weight: bold;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	border-radius: 1em;
+
+	&:hover { background-color: #333; }
+}
+
 /* Common flex attribute, `flex` is aliased to `flex-x` */
 .flex, .flex-x, .flex-y { display: flex; }
 .flex-y { flex-direction: column; }
@@ -257,41 +270,24 @@ summary {
 /* ================================== APPLY PAGE STYLING ================================== */
 #page--apply {
 	gap: 50px;
+
+	button[type="submit"],
+	h2:not(:first-child) { margin-top: 20px; }
+
 	h2 {
+		margin-bottom: 5px;
 		line-height: 1.2em;
 		text-align: center;
-
-		&:not(:first-child) { margin-top: 20px; }
 	}
 }
 
 #application-form {
+	width: 400px;
+	max-width: 100%;
 	background-color: #fff;
 	padding: 2em;
 	box-shadow: var(--shadow);
-	border-radius: 2em 2em 2em 2em;
-	max-width: 500px;
-	width: 100%;
-	box-sizing: border-box;
-	line-height: 2;
-}
-
-#apply--submitButton {
-	padding: 1em 2em;
-	font-size: 16pt;
-	font-weight: bold;
-	background-color: #000;
-	color: #fff;
-	border: none;
-	border-radius: 1em;
-	cursor: pointer;
-	display: block;
-
-	&:hover { background-color: #333; }
-}
-
-.apply--radiobutton {
-    margin-right: 1.5em;
+	border-radius: 2em;
 }
 
 /* Hide the default radio */
