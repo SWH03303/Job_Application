@@ -117,8 +117,12 @@ input::placeholder {
 	font-weight: 500;
 	text-align: right;
 }
-input[type="date"], select {
-	text-align: right;
+input[type="date"], select { text-align: right; }
+input[type="file"] {
+	min-width: 0;
+	font-weight: 600;
+	text-align: center;
+	&::file-selector-button { display: none; }
 }
 /* Form submission button */
 button[type="submit"] {
@@ -390,12 +394,15 @@ input[type="radio"] {
 	input { padding: 0; max-width: 0; }
 }
 
+#application-form input[type="file"],
 #form-start-date {
 	border: var(--form-border);
 	border-radius: 0 0 1em 1em;
-	&:has(input:focus) { border: var(--form-border-active); }
 }
-label[for="input-start"] { font-weight: 600; }
+#application-form input[type="file"]:focus,
+#form-start-date:has(input:focus) { border: var(--form-border-active); }
+label[for="input-documents"],
+label[for="input-start"] { font-weight: 500; }
 #input-start { border: none; }
 
 /* ================================== ABOUT PAGE STYLING ================================== */
