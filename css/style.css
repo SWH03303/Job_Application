@@ -363,6 +363,14 @@ input[type="radio"] {
 	input[value="false"]::before { content: "No"; }
 }
 
+#form-start-date {
+	border: var(--form-border);
+	border-radius: 0 0 1em 1em;
+	&:has(input:focus) { border: var(--form-border-active); }
+}
+label[for="input-start"] { font-weight: 600; }
+#input-start { border: none; }
+
 /* ================================== ABOUT PAGE STYLING ================================== */
 #about--main {
 	--padding: 20px;
