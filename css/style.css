@@ -185,7 +185,6 @@ summary {
 }
 
 .categorized-listing {
-	padding: 0 var(--spacing);
 	display: flex;
 	flex-flow: row wrap; /* Place overflowing elements below existing ones */
 	gap: var(--spacing);
