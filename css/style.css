@@ -20,7 +20,7 @@ body {
 /* Global variables to avoid repeating code */
 :root {
 	--spacing: 10px;
-	--shadow: 0 0 20px #0003;
+	--round: 1em;
 	--form-color: #eee;
 	--form-border: 2px solid var(--form-color);
 	--form-border-active: 2px solid black;
@@ -155,6 +155,14 @@ button[type="submit"] {
 /* Shrunk element to 0 before expanding into remaining space. This helps scrolling problem when the
  * existing elements already overflows. */
 .fill { flex-basis: 0; flex-grow: 1; }
+/* White corner-rounded box with blurry background */
+.box {
+	padding: var(--round);
+	border-radius: var(--round);
+	background-color: #fffa;
+	box-shadow: 0 0 20px #0004;
+	backdrop-filter: blur(5px);
+}
 
 .important { font-weight: bold; }
 .tiny { font-size: 8pt; font-weight: bold; color: #ddd; }
@@ -162,6 +170,8 @@ button[type="submit"] {
 
 /* ====================================== HOME PAGE STYLING ===================================== */
 #page--home {
+	--round: 2em;
+
 	width: 1400px;
 	font-size: 16pt;
 
@@ -170,14 +180,9 @@ button[type="submit"] {
 	p { margin-left: 1em; }
 }
 
-#company-introduction, #site-description, #site-services {
-	background-color: #fff;
-	padding: 2em;
-	box-shadow: var(--shadow);
-}
 #company-introduction {
 	gap: var(--spacing);
-	border-radius: 2em 2em 0 0;
+	border-radius: var(--round) var(--round) 0 0;
 }
 #company-logo { display: block; max-width: 300px; } /* Preserve image ratio */
 #company-title { margin: 0; }
@@ -185,11 +190,11 @@ button[type="submit"] {
 #site-info { gap: var(--spacing); }
 #site-description, #site-services {
 	align-items: flex-start;
-	border-radius: 0 0 2em 0;
+	border-radius: 0 0 var(--round) 0;
 }
 #site-description {
 	flex-grow: 2; /* Grow by 2 times compared to other fill elements */
-	border-radius: 0 0 0 2em;
+	border-radius: 0 0 0 var(--round);
 }
 
 #secret {
