@@ -103,6 +103,7 @@ input, select {
 	border-bottom: var(--form-border);
 	font-size: 12pt;
 }
+input:not(:focus) { text-align: right; }
 select {
 	padding: 0;
 	font-weight: 500;
@@ -110,6 +111,7 @@ select {
 input::placeholder {
 	color: #aaa;
 	font-weight: 500;
+	text-align: right;
 }
 input[type="date"], select {
 	text-align: right;
