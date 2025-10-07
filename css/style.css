@@ -458,6 +458,7 @@ label[for="input-start"] { font-weight: 500; }
 .member-profile {
 	width: calc(400px - var(--padding) * 2);
 	h1 { line-height: 1em; }
+	&:hover { background-color: #eee; }
 }
 
 .avarta {
@@ -475,16 +476,9 @@ label[for="input-start"] { font-weight: 500; }
 	gap: var(--spacing);
 }
 .social { width: var(--social-icon-size); }
-.social:hover { animation: moveBox 0.3s linear; }
-@keyframes moveBox {
+.social:hover { animation: jumpy 0.3s linear; }
+
+@keyframes jumpy {
 	25% { transform: translateY(-10px);}
 	75% { transform: translateY(0px);}
-}
-
-#about--BNQH:hover, #about--LMS:hover {
-	animation: moveBox1 0.3s linear;
-}
-@keyframes moveBox1 {
-	25% { transform: translateY(-10px); background-color: rgb(235, 235, 235); }
-	75% { transform: translateY(0px); background-color: rgb(255, 255, 255); }
 }
