@@ -114,6 +114,7 @@ input, select {
 input:not(:focus) { text-align: right; }
 select {
 	padding: 0;
+	padding-left: .5em;
 	font-weight: 500;
 }
 input::placeholder {
