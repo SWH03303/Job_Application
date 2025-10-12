@@ -333,6 +333,20 @@ button[type="submit"] {
 	}
 }
 
+.job-apply-btn {
+	position: absolute;
+	top: 4.5em;
+	right: 25px;
+	padding: .5em 1.5em;
+	border-radius: .7em;
+	background-color: black;
+	color: white;
+	font-size: 20pt;
+	text-decoration: none;
+	&:hover { background: #333; }
+	&::before { content: "Apply!"; margin: 0 !important; }
+}
+
 /* Narrow screen styling */
 @media (max-width: 1200px) {
 	#page--jobs { flex-direction: column; align-items: center; }
