@@ -24,7 +24,7 @@
 			<p>To apply for a job, please fill the following form<p>
 		</section>
 
-		<form id="application-form" class="flex-y box" enctype="multipart/form-data">
+		<form id="application-form" class="flex-y box" action="formtest.php" method="post" enctype="multipart/form-data">
 			<h2>Personal information</h2>
 			<div class="flex">
 				<label for="input-name">Name</label>
@@ -131,7 +131,7 @@
 				<label for="input-documents">Additional supporting documents (resume, certificates, e.t.c.)</label>
 				<input id="input-documents" type="file" name="documents" multiple>
 			</div>
-			<button type="submit">Submit Application</button>
+			<button type="submit">Apply</button>
 		</form>
 	</main>
 
