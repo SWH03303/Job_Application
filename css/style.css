@@ -131,10 +131,7 @@ input[type="file"] {
 	&::file-selector-button { display: none; }
 }
 /* Hide the default radio */
-input[type="radio"] {
-	appearance: none;
-	-webkit-appearance: none;
-}
+input[type="radio"] { appearance: none; }
 
 /* Form submission button */
 button[type="submit"] {
